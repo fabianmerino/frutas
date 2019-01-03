@@ -1,28 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container mt-5 pt-5">
+      <header>
+        <b-row align-h="between">
+          <b-col cols="6">
+            <router-link :to="{ name: 'home' }">
+              <img src="./assets/logo.png" alt="Logo" class="logo">
+            </router-link>
+          </b-col>
+          <b-col cols="6">
+            <b-row align-h="end" align-v="start">
+              <a href>
+                <img src="./assets/esp.png" alt="Español" class="band">
+              </a>
+              <a href>
+                <img src="./assets/eng.png" alt="English" class="band">
+              </a>
+            </b-row>
+          </b-col>
+        </b-row>
+      </header>
+      <NavBar></NavBar>
+      <Cuerpo class="py-2"></Cuerpo>
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NavBar from "./components/NavBar";
+import Cuerpo from "./components/Cuerpo";
+import Footer from "./components/Footer";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    NavBar,
+    Cuerpo,
+    Footer
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.logo {
+  max-width: 250px;
+}
+.band {
+  max-width: 50px;
+  padding: 3px;
+}
+header {
+  padding-bottom: 30px;
 }
 </style>
